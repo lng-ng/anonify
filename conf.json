@@ -1,0 +1,7 @@
+{
+	"id": "arx50",
+	"input": "diabetes-anonymized.csv",
+	"qids": ["gender","age","bmi"],
+	"sampling_percentage": 0.1,
+	"num_experiments": 3
+}
