@@ -1,9 +1,6 @@
 # Random Sampling
 Sample a k-anonymized dataset. The sampled dataset has, for each equivalence class, a certain amount of random records removed.
 
-## Python version
-3.11.4
-
 ## Requirements
 For the dependencies, run ``pip install -r requirements.txt``.
 
@@ -18,3 +15,5 @@ Options are given in the configuration file ``conf.json``.
 "num_experiments": number of times the sampling process will be run  
 "id": affects the name of the output. The output file of the i-th run follows the naming schema {id}\_\{dataset name\}\_t\_\{i}  
 
+## Python version
+3.11.4
