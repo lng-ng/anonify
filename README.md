@@ -1,5 +1,5 @@
 # Random Sampling
-Sample a k-anonymized dataset. A certain amount of records are removed from each equivalence class.
+Sample a k-anonymized dataset. The sampled dataset has, for each equivalence class, a certain amount of random records removed.
 
 ## Python version
 3.11.4
