@@ -16,4 +16,4 @@ Options are given in the configuration file ``conf.json``.
 "id": affects the name of the output. The output file of the i-th run follows the naming schema {id}\_\{dataset name\}\_t\_\{i}  
 
 ## Python version
-3.11.4
+The sampling process was run on Python 3.11.4.
