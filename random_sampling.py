@@ -12,7 +12,7 @@ def random_deletion(df, p, qids):
     result = df.copy()
     for label in labels:
         arr = label.to_numpy()
-        drop_idx = np.random.choice(arr, size=int(p*len(label)), replace=False)
+        drop_idx = np.random.choice(arr, size=np.ceil(p*len(label)).astype(int), replace=False)
         result = result.drop(drop_idx)
     return result
 
@@ -23,7 +23,7 @@ if __name__ == "__main__":
     with open(args.filename) as f:
         conf = json.load(f)
     dataset_id = conf['id']
-    print(f"ID: {dataset_id}")
+    #print(f"ID: {dataset_id}")
     inp = conf['input']
     p = conf['sampling_percentage']
     n = conf['num_experiments']

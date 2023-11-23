@@ -1,0 +1,6 @@
+never;neverORnotcurrent;*
+not current;neverORnotcurrent;*
+former;formerORcurrent;*
+current;formerORcurrent;*
+ever;everORnoinfo;*
+No Info;everORnoinfo;*

@@ -1,0 +1,6 @@
+gender;hypertension;Original Dataset;Only K-Anonymity;Random Deletion 0;Random Deletion 1;Random Deletion 2;Random Deletion 3;Random Deletion 4;Random Deletion 5;Random Deletion 6;Random Deletion 7;Random Deletion 8;Random Deletion 9;Random Deletion (average)
+Female;0;54355;54344.0;27180.0;27132.0;27157.0;27156.0;27199.0;27085.0;27174.0;27143.0;27149.0;27121.0;27149.6
+Female;1;4197;4197.0;2059.0;2107.0;2082.0;2083.0;2040.0;2154.0;2065.0;2096.0;2090.0;2118.0;2089.4
+Male;0;38142;38142.0;19057.0;19054.0;19028.0;19075.0;19080.0;19069.0;19123.0;19118.0;19009.0;19042.0;19065.5
+Male;1;3288;3288.0;1639.0;1642.0;1668.0;1621.0;1616.0;1627.0;1573.0;1578.0;1687.0;1654.0;1630.5
+Other;0;18;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0
