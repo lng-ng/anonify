@@ -4,7 +4,13 @@ Sample a k-anonymized dataset. The sampled dataset has, for each equivalence cla
 ## Requirements
 For the dependencies, run ``pip install -r requirements.txt``.
 
-## Running the code
+## K-anonymization
+The code for k-anonymization using OKA and Mondrian is provided. The implementation is based on the [open-source code](https://github.com/fhstp/k-AnonML) of Slijepčević et al. 
+For the ARX algorithm, the [ARX tool](https://github.com/arx-deidentifier/arx/) is used. 
+
+Run ``python anonymization.py test_conf.json`` to produce a k-anonymized dataset (either by OKA or Mondrian). The algorithm used and the value for **k** can be changed in the config file.
+
+## Running the sampling code
 Run ``python main.py conf.json`` to produce a sampled dataset.
 Options are given in the configuration file ``conf.json``.
 
@@ -17,3 +23,5 @@ Options are given in the configuration file ``conf.json``.
 
 ## Python version
 The sampling process was run on Python 3.11.4.
+
+
