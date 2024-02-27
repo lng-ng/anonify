@@ -4,7 +4,7 @@ Sample a k-anonymized dataset. The sampled dataset has, for each equivalence cla
 ## Replicating the experiments
 For replicating the experiments in the paper, Juypter notebooks are provided. We recommened running the notebooks using Google Colab to skip the hassle of setting up an environment.
 ### Data Anonymity Assessment (Section 6.3 in paper)
-https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/random_sampling/blob/main/data_anonymity.ipynb)
+([![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/random_sampling/blob/main/data_anonymity.ipynb))
 
 ## Requirements
 For the dependencies, run ``pip install -r requirements.txt``.
