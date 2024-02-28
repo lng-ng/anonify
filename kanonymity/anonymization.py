@@ -33,7 +33,7 @@ def main(conf):
 
     # load the data
     if dataset == 'diabetes':
-        data = pd.read_csv(os.path.join(path, f'preprocessed_{dataset}.csv'),delimiter=',')
+        data = pd.read_csv(os.path.join(path, f'diabetes_prediction_dataset.csv'),delimiter=',')
     else:
         data = pd.read_csv(data_path, delimiter=';')
     if dataset == "adult":
