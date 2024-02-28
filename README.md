@@ -7,18 +7,62 @@ More specifically, the repository contains implementations of core components of
 Additionally, the code to replicate the experiments described in the paper are also provided.
 
 ## General usage
-This section contains instructions on using stratified sampling and/or the k-anonymization library. 
+This section contains information and instructions on using stratified sampling and/or the k-anonymization library. See below for for replicating the experiments in the paper.
 ### Setup
 #### Prerequisites
 - Python 3.10+
+#### Installation
+- Clone this repository: ``git clone https://github.com/lng-ng/anonify.git``
+- Setup a virtual environment using virtualenv/conda. For running the experiments, conda was used.
+- Run ``pip install -r requirements.txt`` for the dependencies.
+### K-Anonymization Library
+The $k$-anonymization library is based on the [open-source code](https://github.com/fhstp/k-AnonML) of Slijepčević et al.  
+Run ``python anonymization.py conf.json`` to produce a k-anonymized dataset. Options are given in the JSON configuration file.
+### Stratified Sampling
+Run ``python stratified_sampling.py conf.json`` to produce a sampled version of the input $k$-anonymized dataset.
+#### Input
+The input dataset has to be $k$-anonymized beforehand, but not necessarily by the provided $k$-anonymization library. It only needs to have the correct format: a ``.csv`` file, where each row represents a record and each column represents an attribute. An example dataset can look like this:
+| Gender | Age | A|
+| ---- | ----- | -----|
+| Male | 20-30 | 1 |
+| * | * | 0 |
 
-Clone this repository: ``git clone ``
-For the dependencies, run ``pip install -r requirements.txt``.
+Therefore, an anonymization tool like [ARX](https://github.com/arx-deidentifier/arx/) can also be used to produce a suitable input.
+#### Configuration file
+Options are given in the JSON configuration file. Below are descriptions of the fields.
+| Field | Description
+| :--- | :----------
+| `id` | name of the sampling process. This field is part of the output name.
+| `input` | path to the input dataset.
+| `qids` | list of all attributes which are quasi-identifiers of the input dataset.
+| `deletion_percentage` | $0<=p<=1$ determines the percentage of records being **deleted** from the dataset. E.g if you want a sampling percentage of 70%, then the deletion percentage would be 30% or 0.3.
+| `num_experiments` | number of times the sampling process will be run.
 
+The output of the $i$-th run follows the convention ``{id}_sampled_p{deletion_percentage*100}_t{i}.csv``
 
 ## Replicating the experiments
-For replicating the experiments in the paper, Jupyter notebooks are provided. We recommend running the notebooks using Google Colab to skip the hassle of setting up an environment.
-### Information Loss (Section 6.2.1 in paper)
+For replicating the experiments in the paper, Jupyter notebooks are provided.
+### Dataset
+The _Diabetes_ dataset was used for evaluating the protocol. The dataset can be found [here](https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset)
+
+#### Downloading necessary data
+Each experiment requires having certain datasets as input. Usually (except for Information Loss Assessment) the following datasets are required:
+- The original _Diabetes_ dataset
+- The anonymized _Diabetes_ dataset, using the anonymization tool [ARX](https://github.com/arx-deidentifier/arx/) with $k=250$
+  
+We provide a script ``utils/download.py`` to automatically download the necessary datasets for each experiment.
+```
+python utils/download.py [infoloss | dist_data | ml_data | anon_data]
+```
+Note that in the notebook for each experiment, this step is already included so that you do not have to execute this yourself when running the notebook. This section is here mainly to provide additional information. However, the data can also be downloaded manually:
+- for Information Loss Assessment: [here](https://drive.google.com/drive/folders/1G-7anLLgO9bZbg7fL_dAuxHhqf_VK67Y?usp=drive_link) (it can take a while to download the data)
+- for Data Distribution Assessment: [here](https://drive.google.com/file/d/1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b/view?usp=drive_link) and [here](https://drive.google.com/file/d/1Mpsr0XfQ-yAyQzarbfGEnu34Li0zVtOU/view?usp=drive_link)
+- for Machine Learning Classifiers’ Performance Assessment: [here](https://drive.google.com/file/d/1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b/view?usp=drive_link) and [here](https://drive.google.com/file/d/1Mpsr0XfQ-yAyQzarbfGEnu34Li0zVtOU/view?usp=drive_link)
+- for Data Anonymity Assessment: [here](https://drive.google.com/file/d/1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b/view?usp=drive_link)
+
+### Running on Google Colab
+We recommend running the notebooks using Google Colab to skip the hassle of setting up an environment.
+### Information Loss Assessment (Section 6.2.1 in paper)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/random_sampling/blob/main/info_loss.ipynb)
 ### Data Distribution Assessment (Section 6.2.2 in paper)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/random_sampling/blob/main/data_distribution.ipynb)
@@ -26,6 +70,26 @@ For replicating the experiments in the paper, Jupyter notebooks are provided. We
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/random_sampling/blob/main/classifiers.ipynb)
 ### Data Anonymity Assessment (Section 6.3 in paper)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/random_sampling/blob/main/data_anonymity.ipynb)
+
+### Running locally
+First, follow the setup instructions from the section above (General usage).  
+Then, to run the notebooks locally, additional requirements other than those for general usage have to be installed.  
+```
+pip install notebook
+pip install -r expr_requirements.txt
+pip install -r requirements.txt
+```
+Open Jupyter Notebook at the local repository:
+```
+jupyter notebook
+```
+Then open a notebook, depending on which experiments you want to replicate.
+| Notebook | Experiment
+| :--- | :----------
+| `info_loss.ipynb` | Information Loss Assessment
+| `data_distribution.ipynb` | Data Distribution Assessment
+| `classifiers.ipynb` |  Machine Learning Classifiers’ Performance Assessment
+| `data_anonymity.ipynb` | Data Anonymity Assessment
 
 ## Requirements
 For the dependencies, run ``pip install -r requirements.txt``.
