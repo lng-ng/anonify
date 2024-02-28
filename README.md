@@ -7,7 +7,7 @@ More specifically, the repository contains implementations of core components of
 Additionally, the code to replicate the experiments described in the paper are also provided.
 
 ## General usage
-This section contains information and instructions on using stratified sampling and/or the k-anonymization library. See below for for replicating the experiments in the paper.
+This section contains information and instructions on using stratified sampling and/or the k-anonymization library. See below for replicating the experiments in the paper.
 ### Setup
 #### Prerequisites
 - Python 3.10+
