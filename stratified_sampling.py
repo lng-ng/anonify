@@ -25,7 +25,7 @@ if __name__ == "__main__":
     dataset_id = conf['id']
     #print(f"ID: {dataset_id}")
     inp = conf['input']
-    p = conf['sampling_percentage']
+    p = conf['deletion_percentage']
     n = conf['num_experiments']
     qids = conf['qids']
     df = pd.read_csv(inp, sep=",")
@@ -39,6 +39,6 @@ if __name__ == "__main__":
         runtimes.append(t)
         res_df.to_csv(os.path.join(save_path, f'{dataset_id}_sampled_p{int(p*100)}_t{i}.csv'),index=False)
 
-    print(f"iteration,sampling_percentage,run_time")
+    print(f"iteration,deletion_percentage,run_time")
     for i, t in enumerate(runtimes):
         print(i, p, t)
