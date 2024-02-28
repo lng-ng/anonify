@@ -1,4 +1,4 @@
-# Stratified Sampling
+# Anonify - Stratified Sampling
 Sample a k-anonymized dataset. The sampled dataset has, for each equivalence class, a certain amount of random records removed.
 
 ## Replicating the experiments
