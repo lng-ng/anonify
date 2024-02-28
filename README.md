@@ -1,13 +1,13 @@
-# Random Sampling
+# Stratified Sampling
 Sample a k-anonymized dataset. The sampled dataset has, for each equivalence class, a certain amount of random records removed.
 
 ## Replicating the experiments
 For replicating the experiments in the paper, Jupyter notebooks are provided. We recommend running the notebooks using Google Colab to skip the hassle of setting up an environment.
-### Information Loss (Sectopm 6.2.1 in paper)
+### Information Loss (Section 6.2.1 in paper)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/random_sampling/blob/main/info_loss.ipynb)
 ### Data Distribution Assessment (Section 6.2.2 in paper)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/random_sampling/blob/main/data_distribution.ipynb)
-### Data Distribution Assessment (Section 6.2.3 in paper)
+### Machine Learning Classifiers’ Performance Assessment (Section 6.2.3 in paper)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/random_sampling/blob/main/classifiers.ipynb)
 ### Data Anonymity Assessment (Section 6.3 in paper)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/random_sampling/blob/main/data_anonymity.ipynb)
