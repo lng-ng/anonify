@@ -45,30 +45,15 @@ For replicating the experiments in the paper, Jupyter notebooks are provided.
 ### Dataset
 The _Diabetes_ dataset was used for evaluating the protocol. The dataset can be found [here](https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset)
 
-#### Downloading necessary data
-Each experiment requires having certain datasets as input. Usually (except for Information Loss Assessment) the following datasets are required:
-- The original _Diabetes_ dataset
-- The anonymized _Diabetes_ dataset, using the anonymization tool [ARX](https://github.com/arx-deidentifier/arx/) with $k=250$
-  
-We provide a script ``utils/download.py`` to automatically download the necessary datasets for each experiment.
-```
-python utils/download.py [infoloss | dist_data | ml_data | anon_data]
-```
-Note that in the notebook for each experiment, this step is already included so that you do not have to execute this yourself when running the notebook. This section is here mainly to provide additional information. However, the data can also be downloaded manually:
-- for Information Loss Assessment: [here](https://drive.google.com/drive/folders/1G-7anLLgO9bZbg7fL_dAuxHhqf_VK67Y?usp=drive_link) (it can take a while to download the data)
-- for Data Distribution Assessment: [here](https://drive.google.com/file/d/1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b/view?usp=drive_link) and [here](https://drive.google.com/file/d/1Mpsr0XfQ-yAyQzarbfGEnu34Li0zVtOU/view?usp=drive_link)
-- for Machine Learning Classifiers’ Performance Assessment: [here](https://drive.google.com/file/d/1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b/view?usp=drive_link) and [here](https://drive.google.com/file/d/1Mpsr0XfQ-yAyQzarbfGEnu34Li0zVtOU/view?usp=drive_link)
-- for Data Anonymity Assessment: [here](https://drive.google.com/file/d/1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b/view?usp=drive_link)
-
 ### Running on Google Colab
 We recommend running the notebooks using Google Colab to skip the hassle of setting up an environment.
-### Information Loss Assessment (Section 6.2.1 in paper)
+#### Information Loss Assessment (Section 6.2.1 in paper)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/random_sampling/blob/main/info_loss.ipynb)
-### Data Distribution Assessment (Section 6.2.2 in paper)
+#### Data Distribution Assessment (Section 6.2.2 in paper)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/random_sampling/blob/main/data_distribution.ipynb)
-### Machine Learning Classifiers’ Performance Assessment (Section 6.2.3 in paper)
+#### Machine Learning Classifiers’ Performance Assessment (Section 6.2.3 in paper)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/random_sampling/blob/main/classifiers.ipynb)
-### Data Anonymity Assessment (Section 6.3 in paper)
+#### Data Anonymity Assessment (Section 6.3 in paper)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/random_sampling/blob/main/data_anonymity.ipynb)
 
 ### Running locally
@@ -91,31 +76,26 @@ Then open a notebook, depending on which experiments you want to replicate.
 | `classifiers.ipynb` |  Machine Learning Classifiers’ Performance Assessment
 | `data_anonymity.ipynb` | Data Anonymity Assessment
 
-## Requirements
-For the dependencies, run ``pip install -r requirements.txt``.
+When running the notebooks locally, ignore the Environment Setup section because they are only needed for Colab.
 
-## K-anonymization
-The code for k-anonymization using OKA and Mondrian is provided. The implementation is based on the [open-source code](https://github.com/fhstp/k-AnonML) of Slijepčević et al. 
-Run ``python anonymization.py test_conf.json`` to produce a k-anonymized dataset (either by OKA or Mondrian). The algorithm used and the value for **k** can be changed in the config file.
+### Downloading necessary data
+Each experiment requires having certain datasets as input. For most experiments in the paper (except for Information Loss Assessment), the following datasets are required:
+- The original _Diabetes_ dataset
+- The anonymized _Diabetes_ dataset, using the anonymization tool [ARX](https://github.com/arx-deidentifier/arx/) with $k=250$
+  
+We provide a script ``utils/download.py`` to automatically download the necessary datasets for each experiment.
+```
+python utils/download.py [infoloss | dist_data | ml_data | anon_data]
+```
+Note that in the notebook for each experiment, this step is already included so that you do not have to execute this yourself when running the notebook. This section is here mainly to provide additional information. However, the data can also be downloaded manually:
+- for Information Loss Assessment: [here](https://drive.google.com/drive/folders/1G-7anLLgO9bZbg7fL_dAuxHhqf_VK67Y?usp=drive_link) (it can take a while to download the data)
+- for Data Distribution Assessment: [here](https://drive.google.com/file/d/1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b/view?usp=drive_link) and [here](https://drive.google.com/file/d/1Mpsr0XfQ-yAyQzarbfGEnu34Li0zVtOU/view?usp=drive_link)
+- for Machine Learning Classifiers’ Performance Assessment: [here](https://drive.google.com/file/d/1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b/view?usp=drive_link) and [here](https://drive.google.com/file/d/1Mpsr0XfQ-yAyQzarbfGEnu34Li0zVtOU/view?usp=drive_link)
+- for Data Anonymity Assessment: [here](https://drive.google.com/file/d/1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b/view?usp=drive_link)
 
-For the ARX algorithm, the [ARX tool](https://github.com/arx-deidentifier/arx/) is used. The ARX 250-anonymized dataset used in the evaluation is provided.
-
-## Running the sampling code
-Run ``python main.py conf.json`` to produce a sampled dataset.
-Options are given in the configuration file ``conf.json``.
-
-## About the configuration file
-"input": path to the k-anonymized dataset  
-"qids": the quasi-identifiers used for the k-anonymization process.  
-"sampling_percentage": the percentage of records to remove from each equivalence class  
-"num_experiments": number of times the sampling process will be run  
-"id": affects the name of the output. The output file of the i-th run follows the naming schema {id}\_\{dataset name\}\_t\_\{i}.  
-
-## Figures
-All figures and the code to produce them are included in ``plot_figures.ipynb``.
-## Python version
-The sampling process was run on Python 3.11.4.
-
+Alternatively, you can also create the data yourself:
+- Download the original _Diabetes_ dataset from [Kaggle](https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset).
+- Install [ARX](https://github.com/arx-deidentifier/arx/), then use it to anonymize the dataset.
 
 
 
