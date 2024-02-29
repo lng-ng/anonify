@@ -58,6 +58,7 @@ We recommend running the notebooks using Google Colab to skip the hassle of sett
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/data_distribution.ipynb)
 #### Machine Learning Classifiers’ Performance Assessment (Section 6.2.3 in the paper)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/classifiers.ipynb)
+Note that this experiment takes a while to finish (~20 minutes)
 #### Data Anonymity Assessment (Section 6.3 in the paper)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/data_anonymity.ipynb)
 
