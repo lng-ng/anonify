@@ -15,21 +15,17 @@ In all our sampling experiments, we ran each experiment 10 times and computed th
 ## General usage
 This section contains information and instructions on using stratified sampling and the k-anonymization library. See below for replicating the experiments in the paper.
 ### Setup
+
 #### Prerequisites
 - Python 3.10+
 #### Installation
 - Clone this repository: ``git clone https://github.com/lng-ng/anonify.git``
 - Setup a virtual environment using virtualenv/conda. For running the experiments, conda was used.
 - Run ``pip install -r requirements.txt`` for the dependencies.
-### K-Anonymization
-The $k$-anonymization library is based on the [open-source code](https://github.com/fhstp/k-AnonML) of Slijepčević et al.   
-Run ``python anonymization.py conf.json`` to produce a k-anonymized dataset. Options are given in the JSON configuration file.
-
-For $k$-anonymizing using ARX, the tool can be found [here](https://github.com/arx-deidentifier/arx/)
 ### Stratified Sampling
 Run ``python stratified_sampling.py conf.json`` to produce a sampled version of the input $k$-anonymized dataset.
 #### Input
-The input dataset has to be $k$-anonymized beforehand, but not necessarily by the provided $k$-anonymization library. It only needs to have the correct format: a ``.csv`` file, where each row represents a record and each column represents an attribute. An example dataset can look like this:
+The input dataset has to be $k$-anonymized beforehand. It needs to have the correct format: a ``.csv`` file, where each row represents a record and each column represents an attribute. The separator for the CSV is ``,``. An example dataset can look like this:
 | PID | Sex | Age | Test result |
 | ---- | ----- | -----| -----|
 | 3 | F | 32 | Positive |
@@ -39,6 +35,7 @@ The input dataset has to be $k$-anonymized beforehand, but not necessarily by th
 | 12 | M | 42 | Negative | 
 | 16 | F | 28 | Negative |
 
+Any $k$-anonymization method should work so long as the above requirements for the dataset are fulfilled. As an example, for our experiments in the paper, we used the [anonymization library](https://github.com/fhstp/k-AnonML) by Slijepčević et al. and the [ARX anonymization tool](https://github.com/arx-deidentifier/arx/).
 #### Configuration file
 Options are given in the JSON configuration file. Below are descriptions of the fields.
 | Field | Description
@@ -46,7 +43,7 @@ Options are given in the JSON configuration file. Below are descriptions of the 
 | `id` | name of the sampling process. This field is part of the output name.
 | `input` | path to the input dataset.
 | `qids` | list of all attributes which are quasi-identifiers of the input dataset.
-| `deletion_percentage` | determines the percentage of records being **deleted** from the dataset. E.g if you want a sampling percentage of 70%, then the deletion percentage would be 30% or 0.3. The percentage is in the range of $[0,1]$.
+| `deletion_percentage` | determines the percentage of records being **deleted** from the dataset. E.g if you want a sampling percentage of 70%, then the deletion percentage would be 30% or 0.3. The percentage value is in the range of $[0,1]$.
 | `num_experiments` | number of times the sampling process will be run.
 
 Sampled datasets are produced as the output. The output of the $i$-th run follows the naming convention ``{id}_sampled_p{deletion_percentage*100}_t{i}.csv``
@@ -106,7 +103,7 @@ Note that in the notebook for each experiment, this step is already included so 
 
 Alternatively, you can also create the data yourself:
 - Download the original _Diabetes_ dataset from [Kaggle](https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset).
-- Install [ARX](https://github.com/arx-deidentifier/arx/), then use it to anonymize the dataset.
+- Install [ARX](https://github.com/arx-deidentifier/arx/) and the [anonymization library](https://github.com/fhstp/k-AnonML) by Slijepčević et al., then use them to anonymize the dataset.
 
 ## Citation
 If you use our code, please cite our paper:

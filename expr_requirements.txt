@@ -1,5 +1,5 @@
 matplotlib
 tqdm
 gdown
-sklearn
+scikit-learn
 bigtree
