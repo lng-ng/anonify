@@ -7,7 +7,7 @@ More specifically, the repository contains implementations of core components of
 Additionally, the code to replicate the experiments described in the paper are also provided.
 
 ## General usage
-This section contains information and instructions on using stratified sampling and/or the k-anonymization library. See below for replicating the experiments in the paper.
+This section contains information and instructions on using stratified sampling and the k-anonymization library. See below for replicating the experiments in the paper.
 ### Setup
 #### Prerequisites
 - Python 3.10+
@@ -22,10 +22,14 @@ Run ``python anonymization.py conf.json`` to produce a k-anonymized dataset. Opt
 Run ``python stratified_sampling.py conf.json`` to produce a sampled version of the input $k$-anonymized dataset.
 #### Input
 The input dataset has to be $k$-anonymized beforehand, but not necessarily by the provided $k$-anonymization library. It only needs to have the correct format: a ``.csv`` file, where each row represents a record and each column represents an attribute. An example dataset can look like this:
-| Gender | Age | A|
+| PID | Sex | Age |
 | ---- | ----- | -----|
-| Male | 20-30 | 1 |
-| * | * | 0 |
+| 3 | F | 32 |
+| 5 | F | 26 |
+| 8 | M | 45 |
+| 9 | M | 37 |
+| 12 | M | 42 |
+| 16 | F | 28 |
 
 Therefore, an anonymization tool like [ARX](https://github.com/arx-deidentifier/arx/) can also be used to produce a suitable input.
 #### Configuration file
