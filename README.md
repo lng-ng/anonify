@@ -84,10 +84,7 @@ Then open a notebook, depending on which experiments you want to replicate.
 When running the notebooks locally, ignore the Environment Setup section because they are only needed for Colab.
 
 ### Downloading necessary data
-Each experiment requires having certain datasets as input. For most experiments in the paper (except for Information Loss Assessment), the following datasets are required:
-- The original _Diabetes_ dataset
-- The anonymized _Diabetes_ dataset, using the anonymization tool [ARX](https://github.com/arx-deidentifier/arx/) with $k=250$
-  
+Each experiment requires having certain datasets as input.
 We provide a script ``utils/download.py`` to automatically download the necessary datasets for each experiment.
 ```
 python utils/download.py [infoloss | dist_data | ml_data | anon_data]
