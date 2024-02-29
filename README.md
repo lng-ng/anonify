@@ -30,14 +30,14 @@ For $k$-anonymizing using ARX, the tool can be found [here](https://github.com/a
 Run ``python stratified_sampling.py conf.json`` to produce a sampled version of the input $k$-anonymized dataset.
 #### Input
 The input dataset has to be $k$-anonymized beforehand, but not necessarily by the provided $k$-anonymization library. It only needs to have the correct format: a ``.csv`` file, where each row represents a record and each column represents an attribute. An example dataset can look like this:
-| PID | Sex | Age |
-| ---- | ----- | -----|
-| 3 | F | 32 |
-| 5 | F | 26 |
-| 8 | M | 45 |
-| 9 | M | 37 |
-| 12 | M | 42 |
-| 16 | F | 28 |
+| PID | Sex | Age | Test result |
+| ---- | ----- | -----| -----|
+| 3 | F | 32 | Positive |
+| 5 | F | 26 | Negative |
+| 8 | M | 45 | Positive |
+| 9 | M | 37 | Negative |
+| 12 | M | 42 | Negative | 
+| 16 | F | 28 | Negative |
 
 #### Configuration file
 Options are given in the JSON configuration file. Below are descriptions of the fields.
@@ -52,22 +52,22 @@ Options are given in the JSON configuration file. Below are descriptions of the 
 Sampled datasets are produced as the output. The output of the $i$-th run follows the naming convention ``{id}_sampled_p{deletion_percentage*100}_t{i}.csv``
 
 ## Replicating the experiments
-For replicating the experiments in the paper, Jupyter notebooks are provided.
+For replicating the experiments in the paper, Jupyter notebooks are provided. They can be found in the ``experiments`` folder.
 ### Dataset
 In our assessment, we simulate user records sent to the aggregator using the Diabetes Prediction dataset, available [here](https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset). This dataset includes 100,000 records, each representing a distinct individual, featuring medical and demographic data alongside diabetes status (i.e., whether individuals have diabetes or not). In our evaluation, the entire dataset is employed, resulting in a user base size of 100,000 individuals. We designate age, gender, and BMI as quasi-identifiers (QIDs). The remaining attributes, encompassing crucial health-related information, are considered as sensitive attributes (SAs).
 
 ### Running on Google Colab
 We recommend running the notebooks using Google Colab to skip the hassle of setting up an environment.
 #### Information Loss Assessment (Section 6.2.1 in the paper)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/info_loss.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/experiments/info_loss.ipynb)
 #### Data Distribution Assessment (Section 6.2.2 in the paper)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/data_distribution.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/experiments/data_distribution.ipynb)
 #### Machine Learning Classifiers’ Performance Assessment (Section 6.2.3 in the paper)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/classifiers.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/experiments/classifiers.ipynb)
 
 Note that this experiment takes a while to finish (~20 minutes)
 #### Data Anonymity Assessment (Section 6.3 in the paper)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/data_anonymity.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/experiments/data_anonymity.ipynb)
 
 ### Running locally
 First, follow the setup instructions from the section above (General usage).  
@@ -97,7 +97,7 @@ We provide a script ``utils/download.py`` to automatically download the necessar
 ```
 python utils/download.py [infoloss | dist_data | ml_data | anon_data]
 ```
-Choose a parameter based on which experiment you want to run. E.g for Information Loss Assessment ``python utils/download.py infoloss``.
+Choose a parameter based on which experiment you want to run, e.g., for Information Loss Assessment ``python utils/download.py infoloss``.
 Note that in the notebook for each experiment, this step is already included so that you do not have to execute this yourself when running the notebook. This section is here mainly to provide additional information. However, the data can also be downloaded manually:
 - for Information Loss Assessment: [k-anonymized datasets at different values for k](https://drive.google.com/drive/folders/1G-7anLLgO9bZbg7fL_dAuxHhqf_VK67Y?usp=drive_link) (it can take a while to download the data)
 - for Data Distribution Assessment: [k-anonymized dataset using ARX, k=250](https://drive.google.com/file/d/1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b/view?usp=drive_link) and [original dataset](https://drive.google.com/file/d/1Mpsr0XfQ-yAyQzarbfGEnu34Li0zVtOU/view?usp=drive_link)
@@ -110,6 +110,7 @@ Alternatively, you can also create the data yourself:
 
 ## Citation
 If you use our code, please cite our paper:
+
 [Currently, this information is omitted for anonymity.]
 
 
