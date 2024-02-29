@@ -43,7 +43,7 @@ Options are given in the JSON configuration file. Below are descriptions of the 
 | `deletion_percentage` | determines the percentage of records being **deleted** from the dataset. E.g if you want a sampling percentage of 70%, then the deletion percentage would be 30% or 0.3. The percentage is in the range of $[0,1]$.
 | `num_experiments` | number of times the sampling process will be run.
 
-The output of the $i$-th run follows the convention ``{id}_sampled_p{deletion_percentage*100}_t{i}.csv``
+Sampled datasets are produced as the output. The output of the $i$-th run follows the naming convention ``{id}_sampled_p{deletion_percentage*100}_t{i}.csv``
 
 ## Replicating the experiments
 For replicating the experiments in the paper, Jupyter notebooks are provided.
