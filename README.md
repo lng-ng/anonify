@@ -49,7 +49,7 @@ Options are given in the JSON configuration file. Below are descriptions of the 
 Sampled datasets are produced as the output. The output of the $i$-th run follows the naming convention ``{id}_sampled_p{deletion_percentage*100}_t{i}.csv``
 
 ## Replicating the experiments
-For replicating the experiments in the paper, Jupyter notebooks are provided. They can be found in the ``experiments`` folder.
+For replicating the experiments in the paper, Jupyter notebooks are provided.
 ### Dataset
 In our assessment, we simulate user records sent to the aggregator using the Diabetes Prediction dataset, available [here](https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset). This dataset includes 100,000 records, each representing a distinct individual, featuring medical and demographic data alongside diabetes status (i.e., whether individuals have diabetes or not). In our evaluation, the entire dataset is employed, resulting in a user base size of 100,000 individuals. We designate age, gender, and BMI as quasi-identifiers (QIDs). The remaining attributes, encompassing crucial health-related information, are considered as sensitive attributes (SAs).
 
