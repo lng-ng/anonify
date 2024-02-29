@@ -56,15 +56,15 @@ In our assessment, we simulate user records sent to the aggregator using the Dia
 ### Running on Google Colab
 We recommend running the notebooks using Google Colab to skip the hassle of setting up an environment.
 #### Information Loss Assessment (Section 6.2.1 in the paper)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/experiments/info_loss.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/info_loss.ipynb)
 #### Data Distribution Assessment (Section 6.2.2 in the paper)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/experiments/data_distribution.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/data_distribution.ipynb)
 #### Machine Learning Classifiers’ Performance Assessment (Section 6.2.3 in the paper)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/experiments/classifiers.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/classifiers.ipynb)
 
 Note that this experiment takes a while to finish (~20 minutes)
 #### Data Anonymity Assessment (Section 6.3 in the paper)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/experiments/data_anonymity.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/data_anonymity.ipynb)
 
 ### Running locally
 First, follow the setup instructions from the section above (General usage).  
