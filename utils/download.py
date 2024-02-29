@@ -13,7 +13,7 @@ if __name__ == "__main__":
     parser.add_argument("expr", help="experiment type [infoloss | dist | ml | anon]")
     args = parser.parse_args()
     if args.expr == 'infoloss':
-        gdown.download_folder(id=drive_ids['expr1_data'], quiet=True)
+        gdown.download_folder(id=drive_ids['expr1_data'], quiet=False)
     elif args.expr == 'dist':
         data_folder = 'dist_data'
         os.makedirs(data_folder, exist_ok=True)
