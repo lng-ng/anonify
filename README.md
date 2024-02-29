@@ -52,13 +52,13 @@ The _Diabetes_ dataset was used for evaluating the protocol. The dataset can be 
 
 ### Running on Google Colab
 We recommend running the notebooks using Google Colab to skip the hassle of setting up an environment.
-#### Information Loss Assessment (Section 6.2.1 in paper)
+#### Information Loss Assessment (Section 6.2.1 in the paper)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/info_loss.ipynb)
-#### Data Distribution Assessment (Section 6.2.2 in paper)
+#### Data Distribution Assessment (Section 6.2.2 in the paper)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/data_distribution.ipynb)
-#### Machine Learning Classifiers’ Performance Assessment (Section 6.2.3 in paper)
+#### Machine Learning Classifiers’ Performance Assessment (Section 6.2.3 in the paper)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/classifiers.ipynb)
-#### Data Anonymity Assessment (Section 6.3 in paper)
+#### Data Anonymity Assessment (Section 6.3 in the paper)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/data_anonymity.ipynb)
 
 ### Running locally
