@@ -92,9 +92,9 @@ python utils/download.py [infoloss | dist_data | ml_data | anon_data]
 The parameter are 
 Note that in the notebook for each experiment, this step is already included so that you do not have to execute this yourself when running the notebook. This section is here mainly to provide additional information. However, the data can also be downloaded manually:
 - for Information Loss Assessment: [here](https://drive.google.com/drive/folders/1G-7anLLgO9bZbg7fL_dAuxHhqf_VK67Y?usp=drive_link) (it can take a while to download the data)
-- for Data Distribution Assessment: [origginal dataset](https://drive.google.com/file/d/1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b/view?usp=drive_link) and [250-anonymized dataset](https://drive.google.com/file/d/1Mpsr0XfQ-yAyQzarbfGEnu34Li0zVtOU/view?usp=drive_link)
-- for Machine Learning Classifiers’ Performance Assessment: [here](https://drive.google.com/file/d/1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b/view?usp=drive_link) and [here](https://drive.google.com/file/d/1Mpsr0XfQ-yAyQzarbfGEnu34Li0zVtOU/view?usp=drive_link)
-- for Data Anonymity Assessment: [here](https://drive.google.com/file/d/1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b/view?usp=drive_link)
+- for Data Distribution Assessment: [k-anonymized dataset using ARX, $k=250$](https://drive.google.com/file/d/1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b/view?usp=drive_link) and [original dataset](https://drive.google.com/file/d/1Mpsr0XfQ-yAyQzarbfGEnu34Li0zVtOU/view?usp=drive_link)
+- for Machine Learning Classifiers’ Performance Assessment: [k-anonymized dataset using ARX, $k=250$](https://drive.google.com/file/d/1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b/view?usp=drive_link) and [original dataset](https://drive.google.com/file/d/1Mpsr0XfQ-yAyQzarbfGEnu34Li0zVtOU/view?usp=drive_link)
+- for Data Anonymity Assessment: [k-anonymized dataset using ARX, $k=250$](https://drive.google.com/file/d/1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b/view?usp=drive_link)
 
 Alternatively, you can also create the data yourself:
 - Download the original _Diabetes_ dataset from [Kaggle](https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset).
