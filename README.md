@@ -40,7 +40,7 @@ Options are given in the JSON configuration file. Below are descriptions of the 
 | `id` | name of the sampling process. This field is part of the output name.
 | `input` | path to the input dataset.
 | `qids` | list of all attributes which are quasi-identifiers of the input dataset.
-| `deletion_percentage` | $0<=p<=1$ determines the percentage of records being **deleted** from the dataset. E.g if you want a sampling percentage of 70%, then the deletion percentage would be 30% or 0.3.
+| `deletion_percentage` | determines the percentage of records being **deleted** from the dataset. E.g if you want a sampling percentage of 70%, then the deletion percentage would be 30% or 0.3. The percentage is in the range of $[0,1]$
 | `num_experiments` | number of times the sampling process will be run.
 
 The output of the $i$-th run follows the convention ``{id}_sampled_p{deletion_percentage*100}_t{i}.csv``
