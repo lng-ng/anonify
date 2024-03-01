@@ -92,7 +92,7 @@ Then open a notebook, depending on which experiments you want to replicate.
 | `classifiers.ipynb` |  Machine Learning Classifiers’ Performance Assessment
 | `data_anonymity.ipynb` | Data Anonymity Assessment
 
-When running the notebooks locally, ignore the Environment Setup section because they are only needed for Colab.
+When running the notebooks locally, please ignore the cell in the section Environment Setup of the notebook, as that is meant for Colab only.
 
 ### Downloading necessary data
 Each experiment requires having certain datasets as input.
