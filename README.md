@@ -22,6 +22,10 @@ This section contains information and instructions on using stratified sampling.
 - Clone this repository: ``git clone https://github.com/lng-ng/anonify.git``
 - Setup a virtual environment using virtualenv/conda. For running the experiments, conda was used.
 - Run ``pip install -r requirements.txt`` for the dependencies.
+
+### K-Anonymization
+In our experiments, we used the [anonymization library](https://github.com/fhstp/k-AnonML) by Slijepčević et al. and the [ARX anonymization tool](https://github.com/arx-deidentifier/arx/).
+
 ### Stratified Sampling
 Run ``python stratified_sampling.py conf.json`` to produce a sampled version of the input $k$-anonymized dataset.
 #### Input
@@ -35,7 +39,8 @@ The input dataset has to be $k$-anonymized beforehand. It needs to have the corr
 | 12 | M | 42 | Negative | 
 | 16 | F | 28 | Negative |
 
-Any $k$-anonymization method should work so long as the above requirements for the dataset are fulfilled. As an example, for our experiments in the paper, we used the [anonymization library](https://github.com/fhstp/k-AnonML) by Slijepčević et al. and the [ARX anonymization tool](https://github.com/arx-deidentifier/arx/).
+Any $k$-anonymization method should work so long as the above requirements for the dataset are fulfilled.
+
 #### Configuration file
 Options are given in the JSON configuration file. Below are descriptions of the fields.
 | Field | Description
