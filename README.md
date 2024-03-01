@@ -13,7 +13,7 @@ The repository includes the implementation for stratified sampling. Additionally
 In all our sampling experiments, we ran each experiment 10 times and computed the average results. This is necessary because the selection of records to be released within each equivalence class is performed randomly.
 
 ## General usage
-This section contains information and instructions on using stratified sampling and the k-anonymization library. See below for replicating the experiments in the paper.
+This section contains information and instructions on using stratified sampling. See below for replicating the experiments in the paper.
 ### Setup
 
 #### Prerequisites
