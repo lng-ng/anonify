@@ -28,19 +28,9 @@ This section contains information and instructions on using stratified sampling.
 In our experiments, we used the [anonymization library](https://github.com/fhstp/k-AnonML) by Slijepčević et al. and the [ARX anonymization tool](https://github.com/arx-deidentifier/arx/).
 
 ### Stratified Sampling
-Run ``python stratified_sampling.py conf.json`` to produce a sampled version of the input $k$-anonymized dataset.
-#### Input
-The input dataset has to be $k$-anonymized beforehand. It needs to have the correct format: a ``.csv`` file, where each row represents a record and each column represents an attribute. The separator for the CSV is ``,``. An example dataset can look like this:
-| PID | Sex | Age | Test result |
-| ---- | ----- | -----| -----|
-| 3 | F | 32 | Positive |
-| 5 | F | 26 | Negative |
-| 8 | M | 45 | Positive |
-| 9 | M | 37 | Negative |
-| 12 | M | 42 | Negative | 
-| 16 | F | 28 | Negative |
+Run ``python stratified_sampling.py <conf_file>`` to produce a sampled version of the input $k$-anonymized dataset. **The configuration file needs to be set up manually. Details about the configuration file are given in the next section.**
 
-Any $k$-anonymization method should work so long as the above requirements for the dataset are fulfilled.
+**For testing the code, we provide a sample configuration file and $k$-anonymized dataset. Run ``python stratified_sampling.py test_conf.json`` and a sampled version of the dataset should be the output.**
 
 #### Configuration file
 Options are given in the JSON configuration file. Below are descriptions of the fields.
@@ -53,6 +43,19 @@ Options are given in the JSON configuration file. Below are descriptions of the 
 | `num_experiments` | number of times the sampling process will be run.
 
 Sampled datasets are produced as the output. The output of the $i$-th run follows the naming convention ``{id}_sampled_p{deletion_percentage*100}_t{i}.csv``
+
+#### Input
+The input dataset has to be $k$-anonymized beforehand. It needs to have the correct format: a ``.csv`` file, where each row represents a record and each column represents an attribute. The separator for the CSV is ``,``. An example dataset can look like this:
+| PID | Sex | Age | Test result |
+| ---- | ----- | -----| -----|
+| 3 | F | 32 | Positive |
+| 5 | F | 26 | Negative |
+| 8 | M | 45 | Positive |
+| 9 | M | 37 | Negative |
+| 12 | M | 42 | Negative | 
+| 16 | F | 28 | Negative |
+
+Any $k$-anonymization method should work so long as the above requirements for the dataset are fulfilled.
 
 ## Replicating the experiments
 For replicating the experiments in the paper, Jupyter notebooks are provided.
