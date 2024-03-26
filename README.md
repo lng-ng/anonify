@@ -31,10 +31,12 @@ In our experiments, we used the [anonymization library](https://github.com/fhstp
 Run ``python stratified_sampling.py <conf_file>`` to produce a sampled version of the input $k$-anonymized dataset.
 
 **--------------------------------**
+
 **The configuration file needs to be set up manually. Details about the configuration file are given in the next section.**
 
 **As an example, we provide a sample configuration file and a sample $k$-anonymized dataset.   
 Run ``python stratified_sampling.py test_conf.json` to produce sample versions of the dataset.**
+
 **--------------------------------**
 
 #### Configuration file
@@ -108,10 +110,12 @@ Each experiment requires having certain datasets as input.
 We provide a script ``utils/download.py`` to automatically download the necessary datasets for each experiment.
 
 **--------------------------------**
+
 ```
 ~~python utils/download.py [infoloss | dist_data | ml_data | anon_data]~~
 python utils/download.py [infoloss | dist | ml | anon]
 ```
+
 **--------------------------------**
 
 Choose a parameter based on which experiment you want to run, e.g., for Information Loss Assessment ``python utils/download.py infoloss``.
