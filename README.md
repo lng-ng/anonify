@@ -98,7 +98,7 @@ When running the notebooks locally, please ignore the cell in the section Enviro
 Each experiment requires having certain datasets as input.
 We provide a script ``utils/download.py`` to automatically download the necessary datasets for each experiment.
 ```
-python utils/download.py [infoloss | dist_data | ml_data | anon_data]
+python utils/download.py [infoloss | dist | ml | anon]
 ```
 Choose a parameter based on which experiment you want to run, e.g., for Information Loss Assessment ``python utils/download.py infoloss``.
 Note that in the notebook for each experiment, this step is already included so that you do not have to execute this yourself when running the notebook. This section is here mainly to provide additional information. However, the data can also be downloaded manually:
