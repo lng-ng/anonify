@@ -28,7 +28,7 @@ This section contains information and instructions on using stratified sampling.
 In our experiments, we used the [anonymization library](https://github.com/fhstp/k-AnonML) by Slijepčević et al. and the [ARX anonymization tool](https://github.com/arx-deidentifier/arx/).
 
 ### Stratified Sampling
-Run ``python stratified_sampling.py <conf_file>`` to produce a sampled version of the input $k$-anonymized dataset. 
+Run ``python stratified_sampling.py <conf_file>`` to produce a sampled version of the input $k$-anonymized dataset.  
 **The configuration file needs to be set up manually. Details about the configuration file are given in the next section.**
 
 **For testing the code, we provide a sample configuration file and $k$-anonymized dataset. Run ``python stratified_sampling.py test_conf.json`` and a sampled version of the dataset should be the output.**
