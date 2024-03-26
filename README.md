@@ -28,10 +28,13 @@ This section contains information and instructions on using stratified sampling.
 In our experiments, we used the [anonymization library](https://github.com/fhstp/k-AnonML) by Slijepčević et al. and the [ARX anonymization tool](https://github.com/arx-deidentifier/arx/).
 
 ### Stratified Sampling
-Run ``python stratified_sampling.py <conf_file>`` to produce a sampled version of the input $k$-anonymized dataset.  
+Run ``python stratified_sampling.py <conf_file>`` to produce a sampled version of the input $k$-anonymized dataset.
+**--------------------------------**
 **The configuration file needs to be set up manually. Details about the configuration file are given in the next section.**
 
-**For testing the code, we provide a sample configuration file and $k$-anonymized dataset. Run ``python stratified_sampling.py test_conf.json`` and a sampled version of the dataset should be the output.**
+**As an example, we provide a sample configuration file and a sample $k$-anonymized dataset.   
+Run ``python stratified_sampling.py test_conf.json` to produce sample versions of the dataset.**
+**--------------------------------**
 
 #### Configuration file
 Options are given in the JSON configuration file. Below are descriptions of the fields.
@@ -102,10 +105,12 @@ When running the notebooks locally, please ignore the cell in the section Enviro
 ### Downloading necessary data
 Each experiment requires having certain datasets as input.
 We provide a script ``utils/download.py`` to automatically download the necessary datasets for each experiment.
+**--------------------------------**
 ```
 ~~python utils/download.py [infoloss | dist_data | ml_data | anon_data]~~
 python utils/download.py [infoloss | dist | ml | anon]
 ```
+**--------------------------------**
 Choose a parameter based on which experiment you want to run, e.g., for Information Loss Assessment ``python utils/download.py infoloss``.
 Note that in the notebook for each experiment, this step is already included so that you do not have to execute this yourself when running the notebook. This section is here mainly to provide additional information. However, the data can also be downloaded manually:
 - for Information Loss Assessment: [k-anonymized datasets at different values for k](https://drive.google.com/drive/folders/1G-7anLLgO9bZbg7fL_dAuxHhqf_VK67Y?usp=drive_link) (it can take a while to download the data)
