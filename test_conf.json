@@ -3,5 +3,5 @@
 	"input": "./test_dataset/diabetes_n5000_arx250_test.csv",
 	"qids": ["gender","age","bmi"],
 	"deletion_percentage": 0.3,
-	"num_experiments": 2
+	"num_experiments": 1
 }
