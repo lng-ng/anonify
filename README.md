@@ -19,11 +19,21 @@ This section contains information and instructions on using stratified sampling.
 
 #### Prerequisites
 - Python 3.10+
+
+**--------------------------------**
+
 #### Installation
 - Clone this repository: ``git clone https://github.com/lng-ng/anonify.git``
-- Setup a virtual environment using virtualenv/conda.
+- Change into the repository ``cd anonify``
+- Setup a virtual environment using virtualenv/conda. For our experiments we used conda, but virtualenv should work as well.
+  ```
+  conda create -n <env_name> python=3.10
+  conda activate <env_name>
+  ```
 - Run ``pip install -r requirements.txt`` for the dependencies.
 
+**--------------------------------**
+  
 ### K-Anonymization
 In our experiments, we used the [anonymization library](https://github.com/fhstp/k-AnonML) by Slijepčević et al. and the [ARX anonymization tool](https://github.com/arx-deidentifier/arx/).
 
