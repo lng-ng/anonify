@@ -1,7 +1,0 @@
-{
-	"id": "arx250",
-	"input": "../all_results/raw_data/k250/0/diabetes-anonymized.csv",
-	"qids": ["gender","age","bmi"],
-	"deletion_percentage": 0.7,
-	"num_experiments": 10
-}
