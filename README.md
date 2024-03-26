@@ -60,7 +60,7 @@ For replicating the experiments in the paper, Jupyter notebooks are provided.
 In our assessment, we simulate user records sent to the aggregator using the Diabetes Prediction dataset, available [here](https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset). This dataset includes 100,000 records, each representing a distinct individual, featuring medical and demographic data alongside diabetes status (i.e., whether individuals have diabetes or not). In our evaluation, the entire dataset is employed, resulting in a user base size of 100,000 individuals. We designate age, gender, and BMI as quasi-identifiers (QIDs). The remaining attributes, encompassing crucial health-related information, are considered as sensitive attributes (SAs).
 
 ### Running the notebooks
-The notebooks can be run either on Google Colab or locally. We recommend running the notebooks using Google Colab to skip the hassle of setting up an environment
+The notebooks can be run either on Google Colab or locally. We recommend running the notebooks using Google Colab to skip the hassle of setting up an environment.
 ### Google Colab
 #### Information Loss Assessment (Section 6.2.1 in the paper)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lng-ng/anonify/blob/main/info_loss.ipynb)
