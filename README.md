@@ -29,6 +29,7 @@ In our experiments, we used the [anonymization library](https://github.com/fhstp
 
 ### Stratified Sampling
 Run ``python stratified_sampling.py <conf_file>`` to produce a sampled version of the input $k$-anonymized dataset.
+
 **--------------------------------**
 **The configuration file needs to be set up manually. Details about the configuration file are given in the next section.**
 
@@ -105,12 +106,14 @@ When running the notebooks locally, please ignore the cell in the section Enviro
 ### Downloading necessary data
 Each experiment requires having certain datasets as input.
 We provide a script ``utils/download.py`` to automatically download the necessary datasets for each experiment.
+
 **--------------------------------**
 ```
 ~~python utils/download.py [infoloss | dist_data | ml_data | anon_data]~~
 python utils/download.py [infoloss | dist | ml | anon]
 ```
 **--------------------------------**
+
 Choose a parameter based on which experiment you want to run, e.g., for Information Loss Assessment ``python utils/download.py infoloss``.
 Note that in the notebook for each experiment, this step is already included so that you do not have to execute this yourself when running the notebook. This section is here mainly to provide additional information. However, the data can also be downloaded manually:
 - for Information Loss Assessment: [k-anonymized datasets at different values for k](https://drive.google.com/drive/folders/1G-7anLLgO9bZbg7fL_dAuxHhqf_VK67Y?usp=drive_link) (it can take a while to download the data)
