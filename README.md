@@ -37,7 +37,7 @@ In our experiments, we used the [anonymization library](https://github.com/fhstp
 
 Run ``python stratified_sampling.py <conf_file>`` to produce sampled versions of the input $k$-anonymized dataset.
 
-The configuration file needs to be set up manually. Details about the configuration file are given in the next section.
+The configuration file has to be set up manually. Details about the configuration file are given in the next section.
 
 As an example, we provide a sample configuration file and a sample $k$-anonymized dataset.   
 To start this example, run ``python stratified_sampling.py test_conf.json``. A sampled version of the dataset should then be produced.
