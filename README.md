@@ -20,8 +20,6 @@ This section contains information and instructions on using stratified sampling.
 #### Prerequisites
 - Python 3.10+
 
-**--------------------------------**
-
 #### Installation
 - Clone this repository: ``git clone https://github.com/lng-ng/anonify.git``
 - Change into the repository ``cd anonify``
@@ -32,23 +30,17 @@ This section contains information and instructions on using stratified sampling.
   ```
 - Run ``pip install -r requirements.txt`` for the dependencies.
 
-**--------------------------------**
-  
 ### K-Anonymization
 In our experiments, we used the [anonymization library](https://github.com/fhstp/k-AnonML) by Slijepčević et al. and the [ARX anonymization tool](https://github.com/arx-deidentifier/arx/).
 
 ### Stratified Sampling
 
-**--------------------------------**
+Run ``python stratified_sampling.py <conf_file>`` to produce sampled versions of the input $k$-anonymized dataset.
 
-**Run ``python stratified_sampling.py <conf_file>`` to produce sampled versions of the input $k$-anonymized dataset.**
+The configuration file needs to be set up manually. Details about the configuration file are given in the next section.
 
-**The configuration file needs to be set up manually. Details about the configuration file are given in the next section.**
-
-**As an example, we provide a sample configuration file and a sample $k$-anonymized dataset.   
-To start stratified sampling, run ``python stratified_sampling.py test_conf.json``. A sampled version of the dataset should then be produced.**
-
-**--------------------------------**
+As an example, we provide a sample configuration file and a sample $k$-anonymized dataset.   
+To start this example, run ``python stratified_sampling.py test_conf.json``. A sampled version of the dataset should then be produced.
 
 #### Configuration file
 Options are given in the JSON configuration file. Below are descriptions of the fields.
@@ -115,30 +107,6 @@ Then open a notebook, depending on which experiments you want to replicate.
 | `data_anonymity.ipynb` | Data Anonymity Assessment
 
 When running the notebooks locally, please ignore the cell in the section Environment Setup of the notebook, as that is meant for Colab only.
-
-### Downloading necessary data
-Each experiment requires having certain datasets as input.
-We provide a script ``utils/download.py`` to automatically download the necessary datasets for each experiment.
-
-**--------------------------------**
-
-```
-~~python utils/download.py [infoloss | dist_data | ml_data | anon_data]~~
-python utils/download.py [infoloss | dist | ml | anon]
-```
-
-**--------------------------------**
-
-Choose a parameter based on which experiment you want to run, e.g., for Information Loss Assessment ``python utils/download.py infoloss``.
-Note that in the notebook for each experiment, this step is already included so that you do not have to execute this yourself when running the notebook. This section is here mainly to provide additional information. However, the data can also be downloaded manually:
-- for Information Loss Assessment: [k-anonymized datasets at different values for k](https://drive.google.com/drive/folders/1G-7anLLgO9bZbg7fL_dAuxHhqf_VK67Y?usp=drive_link) (it can take a while to download the data)
-- for Data Distribution Assessment: [k-anonymized dataset using ARX, k=250](https://drive.google.com/file/d/1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b/view?usp=drive_link) and [original dataset](https://drive.google.com/file/d/1Mpsr0XfQ-yAyQzarbfGEnu34Li0zVtOU/view?usp=drive_link)
-- for Machine Learning Classifiers’ Performance Assessment: [k-anonymized dataset using ARX, k=250](https://drive.google.com/file/d/1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b/view?usp=drive_link) and [original dataset](https://drive.google.com/file/d/1Mpsr0XfQ-yAyQzarbfGEnu34Li0zVtOU/view?usp=drive_link)
-- for Data Anonymity Assessment: [k-anonymized dataset using ARX, k=250](https://drive.google.com/file/d/1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b/view?usp=drive_link)
-
-Alternatively, you can also create the data yourself:
-- Download the original _Diabetes_ dataset from [Kaggle](https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset).
-- Install [ARX](https://github.com/arx-deidentifier/arx/) and the [anonymization library](https://github.com/fhstp/k-AnonML) by Slijepčević et al., then use them to anonymize the dataset.
 
 ## Citation
 If you use our code, please cite our paper:
