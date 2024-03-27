@@ -1,11 +1,10 @@
 import gdown
 import argparse
 import os
-
 drive_ids = {
-    'original': ["1Mpsr0XfQ-yAyQzarbfGEnu34Li0zVtOU", 'diabetes_prediction_dataset.csv'],
-    'arx250_anonymized': ["1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b", "diabetes_anonymized_arx250.csv"],
-    'expr1_data': "1G-7anLLgO9bZbg7fL_dAuxHhqf_VK67Y"
+    'original': ["https://drive.google.com/uc?id=1Mpsr0XfQ-yAyQzarbfGEnu34Li0zVtOU", 'diabetes_prediction_dataset.csv'],
+    'arx250_anonymized': ["https://drive.google.com/uc?id=1SRogEdk7E8REmXmt9CwpWyFF2AL_e37b", "diabetes_anonymized_arx250.csv"],
+    'expr1_data': "https://drive.google.com/drive/folders/1G-7anLLgO9bZbg7fL_dAuxHhqf_VK67Y"
 }
 
 if __name__ == "__main__":
