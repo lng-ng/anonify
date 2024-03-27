@@ -23,7 +23,7 @@ This section contains information and instructions on using stratified sampling.
 #### Installation
 - Clone this repository: ``git clone https://github.com/lng-ng/anonify.git``
 - Change into the repository ``cd anonify``
-- Setup a virtual environment using virtualenv/conda. For our experiments we used conda, but virtualenv should work as well.
+- Setup a virtual environment. For our experiments we used conda, but virtualenv should work as well.
   ```
   conda create -n <env_name> python=3.10
   conda activate <env_name>
