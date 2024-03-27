@@ -1,5 +1,4 @@
 matplotlib
 tqdm
-gdown==4.7.3
 scikit-learn
 bigtree
