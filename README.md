@@ -110,7 +110,7 @@ When running the notebooks locally, please ignore the cell in the section Enviro
 
 ## Citation
 If you use our code, please cite our paper:
-
+```
 @article{gaballah2024anonify,
   title={Anonify: Decentralized Dual-level Anonymity for Medical Data Donation},
   author={Gaballah, Sarah Abdelwahab and Abdullah, Lamya and Alishahi, Mina and Nguyen, Thanh Hoang Long and Zimmer, Ephraim and M{\"u}hlh{\"a}user, Max and Marky, Karola},
@@ -118,6 +118,7 @@ If you use our code, please cite our paper:
   volume={3},
   year={2024}
 }
+```
 
 
 
